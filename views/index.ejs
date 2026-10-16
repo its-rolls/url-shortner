@@ -12,30 +12,34 @@
 <body>
     <div class="container">
     <h1>URL SHortner</h1>
-    <form action="" method="post" class="my-4">
+    <form action="/shortUrls" method="post" class="my-4">
     <div class="input-group">
-        <input type="url" required placeholder="Enter URL here" name="fullurl" id="fullurl" class="form-control">
+        <input type="url" required placeholder="Enter URL here" name="fullUrl" id="fullUrl" class="form-control">
         <button type="submit" class="btn btn-success">Shrink</button>
     </div>
 </form>
 
-    <table>
+    <div class="table-responsive">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Full URL</th>
                 <th>Short URL</th>
-                <th>CLICKS</th>
+                <th>Clicks</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="https://github.com/its-rolls">https://github.com/its-rolls</a></td>
-                <td><a href="/757455">757455</a></td>
-                <td>10</td>
-            </tr>
+            <% shortUrls.forEach(shortUrl => { %>
+    <tr>
+        <td><a href="<%= shortUrl.full %>" target="_blank"><%= shortUrl.full %></a></td>
+        <td><a href="/<%= shortUrl.short %>" target="_blank"><%= shortUrl.short %></a></td>
+        <td><%= shortUrl.clicks %></td>
+    </tr>
+<% }) %>
+            
         </tbody>
     </table>
-    </div>
+</div>
 
 </body>
 
