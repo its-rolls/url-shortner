@@ -4,7 +4,7 @@ A simple and lightweight URL shortener application built with **Node.js**, **Exp
 
 ## Features
 * Shortens long URLs into unique, compact alphanumeric codes.
-* Tracks total click counts for every generated link.
+* Tracks total click counts for every generated link....
 * Automatically redirects users to the destination URL when visiting a short link.
 * Clean and responsive frontend UI rendered with EJS and Bootstrap.
 
